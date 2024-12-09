@@ -32,6 +32,7 @@ result = process_instructions(corrupted_input)
 
 print("Uncorrputed output:", result)
 
+
 ####################
 # Part 2
 ####################

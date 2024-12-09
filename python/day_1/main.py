@@ -31,6 +31,7 @@ for left, right in zip(left_list, right_list):
 # Print the result
 print("Total distance:", total_distance)
 
+
 ####################
 # Part 2
 ####################

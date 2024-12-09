@@ -22,7 +22,7 @@ def count_word_occurrences(text, pattern="XMAS"):
 def extract_diagonals(grid, word, is_forward_diagonal=True):
     number_of_rows = len(grid)
     number_of_columns = len(grid[0])
-    diagonal_lines = [] # Diagonal strings
+    diagonal_lines = []  # Diagonal strings
 
     # Get diagonals -> first column
     for starting_column in range(number_of_columns):
@@ -72,7 +72,7 @@ def extract_diagonals(grid, word, is_forward_diagonal=True):
 
 
 with open("day_4/input.txt", "r") as file:
-    grid = file.readlines()
+    grid = [line.strip() for line in file.readlines()]
 
 total_xmas_occurrences = 0
 lookup_word = "XMAS"
@@ -104,3 +104,25 @@ for diagonal in reverse_diagonals:
     total_xmas_occurrences += count_word_occurrences(diagonal)
 
 print('"XMAS"s found:', total_xmas_occurrences)
+
+
+####################
+# Part 2
+####################
+import re
+
+with open("day_4/input.txt", "r") as file:
+    input = file.read()
+
+row_count = input.index("\n") - 1
+x_shapes_matched = sum(
+    len(
+        re.findall(
+            "(?s)(?=%%s.%%s.{%d}A.{%d}%%s.%%s)" % (row_count, row_count) % tuple(word),
+            input,
+        )
+    )
+    for word in ["SMSM", "SSMM", "MMSS", "MSMS"]
+)
+
+print("X shapes found:", x_shapes_matched)
