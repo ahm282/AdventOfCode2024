@@ -56,4 +56,4 @@ with open("python/day_2/input.txt") as reports_file:
         if can_be_made_safe(levels):
             dampened_safe_reports += 1
 
-print("Safe reports found after Problem Dampener: ", dampened_safe_reports)
+print("Safe reports found after Problem Dampener:", dampened_safe_reports)

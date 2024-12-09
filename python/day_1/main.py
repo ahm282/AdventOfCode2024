@@ -29,7 +29,7 @@ for left, right in zip(left_list, right_list):
     total_distance += abs(left - right)
 
 # Print the result
-print("Total distance: ", total_distance)
+print("Total distance:", total_distance)
 
 ####################
 # Part 2
@@ -47,4 +47,4 @@ for entry in left_list:
     if entry in frequency_map:
         similarity_score += entry * frequency_map[entry]
 
-print("Similarity score: ", similarity_score)
+print("Similarity score:", similarity_score)
